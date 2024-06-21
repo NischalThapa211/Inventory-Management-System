@@ -1,3 +1,24 @@
 <template>
-    
+    <lightning-card title="Employee Assessment Details">
+        <div class="slds-grid slds-grid_align-end slds-p-horizontal_small slds-m-bottom_small">
+            <div class="slds-size_1-of-4">
+                <lightning-input 
+                    type="text" 
+                    placeholder="Search by employee name"
+                    onchange={handleSearchChange}
+                    class="slds-input_small">
+                </lightning-input>
+            </div>
+            <lightning-button 
+                label="Search" 
+                onclick={handleSearch}
+                class="slds-m-left_small">
+            </lightning-button>
+        </div>
+        <lightning-datatable 
+            key-field="id"
+            data={filteredData}
+            columns={columns}>
+        </lightning-datatable>
+    </lightning-card>
 </template>
